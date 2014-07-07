@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	document.write("Hello JavaScript");
+
+	//alert("You Clicked Me");
+
+	setInterval(function() {
+		var s = document.getElementById("samay");
+		var d = new Date();
+		s.innerHTML=d;
+	}, 1000);
+	
+	
+	var count = 10;
+	setInterval(function() {
+		if (count < 100) {
+			var rajni = document.getElementById("rajni");
+			count++;
+			rajni.style.fontSize = count + "px";
+		}
+	}, 50);
+	
+
+	var x = 45;
+	var y = 23;
+	document.write("<br>Sum is " + (x + y));
+
+	document.write("<h1>Rat is brown</h1>");
+
+	function changeText() {
+		var i = document.getElementById("info");
+		//i.innerHTML = "The World is an Amazing place !";
+		i.innerHTML = "<font color='red'>The World is an Amazing place !</font>";
+	}
+	function changeImage() {
+		var img = document.getElementById("myimg");
+		img.src = "shoes.jpg";
+	}
+
+	function toggleZoom() {
+		var b = document.getElementById("bear");
+
+		//if (b.src.match("small")) {
+		b.src = "bearLarge.png";
+		//} else {
+		//b.src = "bearsmall.png";
+		//}
+	}
+
+	function zoomOut() {
+		var b = document.getElementById("bear");
+		b.src = "bearsmall.png";
+	}
+
+	function startCounting() {
+		var n = document.getElementById("num");
+		var counter = 0;
+		setInterval(function() {
+			counter++;
+			n.innerHTML = counter;
+		}, 1000);
+
+	}
+
+	function startAnimation() {
+		var rajni = document.getElementById("rajni");
+		var count = 10;
+		setInterval(function() {
+			if (count < 100) {
+				count++;
+				rajni.style.fontSize = count + "px";
+			}
+		}, 50);
+	}
+</script>
+</head>
+<body>
+<p id="samay"></p>
+	<p id="info">This is information</p>
+	<button onclick="changeText()">Click Karo</button>
+
+	<br>
+	<img id="myimg" src="car.jpg" width="150" height="150"
+		onclick="changeImage()" />
+
+	<center>
+		<img id="bear" src="bearsmall.png" onmouseover="toggleZoom()"
+			onmouseout="zoomOut()">
+	</center>
+
+	<p id="num">This is Text</p>
+	<button onclick="startCounting()">Start Counting</button>
+	<br>
+	<center>
+		<button onclick="startAnimation()">Start Animation</button>
+		<p id="rajni" style="font-size: 10px;">Rajnikanth</p>
+	</center>
+
+</body>
+</html>
